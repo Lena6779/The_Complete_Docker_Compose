@@ -35,6 +35,7 @@ The_Complete_Docker_Compose/
 │   ├── Dockerfile
 │   └── requirements.txt
 ├── .env                       # Configuration (not committed)
+├── .env.example               # Template with placeholder values
 ├── .gitignore
 ├── docker-compose.yml
 └── README.md
@@ -54,19 +55,13 @@ The_Complete_Docker_Compose/
 - [Docker Desktop](https://www.docker.com/products/docker-desktop/)
 
 ### 1. Create a `.env` file
-Create `.env` in the project root (it is excluded from Git):
+Copy the example file and adjust values if needed (`.env` is excluded from Git):
 
+```bash
+cp .env.example .env
 ```
-OLLAMA_URL=http://ollama:11434
-MODEL_NAME=llama3.2:1b
-CHROMA_PATH=/app/chroma_data
-COLLECTION_NAME=documents
-MAX_RESULTS=5
-CONFIDENCE_THRESHOLD=1.0
-DEBUG=true
-DOCS_DIRECTORY=/app/docs
-PYTHONUNBUFFERED=1
-```
+
+On Windows PowerShell: `Copy-Item .env.example .env`
 
 ### 2. Build and start the stack
 ```bash
